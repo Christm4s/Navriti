@@ -15,6 +15,10 @@ buildscript {
 allprojects {
     repositories {
         jcenter()
+        maven {
+            url  "http://tokbox.bintray.com/maven"
+           // url  "https://mvnrepository.com/artifact/javax.mail/mail"
+        }
     }
 }
 
