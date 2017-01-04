@@ -17,7 +17,7 @@ public class OTPVerificationActivity extends AppCompatActivity {
 
     public void joinStream(View view) {
 
-        //pending corrections in this part
+        //pending corrections in this part.
         String correctOTP = "428695";
         EditText editText = (EditText) findViewById(R.id.enter_otp);
         String receivedOTP = editText.getText().toString();
