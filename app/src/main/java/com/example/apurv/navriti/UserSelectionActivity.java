@@ -19,4 +19,10 @@ public class UserSelectionActivity extends AppCompatActivity {
         Intent intent = new Intent(this,EmailActivity.class);
         startActivity(intent);
     }
+
+    public void proceedToVerify(View view) {
+
+        Intent intent = new Intent(this,OTPVerificationActivity.class);
+        startActivity(intent);
+    }
 }

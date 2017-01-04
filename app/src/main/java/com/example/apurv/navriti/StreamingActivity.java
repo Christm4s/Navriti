@@ -9,6 +9,8 @@ import android.content.res.Resources;
 
 import android.widget.LinearLayout;
 import android.util.Log;
+import android.widget.Toast;
+
 import com.opentok.android.Publisher;
 import com.opentok.android.PublisherKit;
 import com.opentok.android.Session;
@@ -42,6 +44,8 @@ public class StreamingActivity extends AppCompatActivity implements Session.Sess
 
         LinearLayout parentLayout = new LinearLayout(this);
         setContentView(parentLayout);
+
+        Toast.makeText(getApplicationContext(), "Starting the Stream!!", Toast.LENGTH_SHORT).show();
 
         //Intent intent = getIntent();
        // String message = intent.getStringExtra(EmailActivity.EXTRA_MESSAGE);
@@ -83,6 +87,7 @@ public class StreamingActivity extends AppCompatActivity implements Session.Sess
     @Override
     public void onStreamReceived(Session session, Stream stream) {
         Log.e(LOGTAG, "call to onStreamReceived");
+        Toast.makeText(getApplicationContext(), "A new member has joined!!", Toast.LENGTH_SHORT).show();
         Subscriber subscriber = new Subscriber(StreamingActivity.this, stream);
         subscriber.setVideoListener(this);
         session.subscribe(subscriber);

@@ -3,5 +3,7 @@
     <string name="edit_message">Enter email id</string>
     <string name="button_sendEmail">Send Email</string>
     <string name="button_publish">Publish Stream</string>
+    <string name="enter_otp">Enter OTP</string>
+    <string name="button_join">Join Stream</string>
 
 </resources>
