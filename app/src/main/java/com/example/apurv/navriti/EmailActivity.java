@@ -40,8 +40,8 @@ public class EmailActivity extends AppCompatActivity {
 
         EditText editText = (EditText) findViewById(R.id.enter_email);
         String to = editText.getText().toString();
-        String subject = "Hello from Navriti!!";
-        String body = "Thank you for using Navriti app. Your OTP is 428695.";
+        String subject = "Streaming Code";
+        String body = "Thank you for using Navriti app. Your secure code to join my stream is 428695. You can download the app via https://drive.google.com/open?id=0B5C6c1293LKSWE9OdXlMZFNlUm8.";
 
         Intent email = new Intent(Intent.ACTION_SEND);
         email.setData(Uri.parse("mailto:"));
