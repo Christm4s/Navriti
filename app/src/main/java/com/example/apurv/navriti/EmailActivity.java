@@ -51,9 +51,17 @@ public class EmailActivity extends AppCompatActivity {
         email.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
 
         email.setType("message/rfc822");
-        //email.setType("*/*");
 
         startActivity(Intent.createChooser(email, "Choose an Email client :"));
 
+        /*try {
+            GMailSender sender = new GMailSender("username@gmail.com", "password");
+            sender.sendMail("This is Subject",
+                    "This is Body",
+                    "user@gmail.com",
+                    "user@yahoo.com");
+        } catch (Exception e) {
+            Log.e("SendMail", e.getMessage(), e);
+        }*/
     }
 }

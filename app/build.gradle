@@ -29,4 +29,7 @@ dependencies {
     //compile group: 'com.tokbox', name: 'opentok-server-sdk', version: '2.3.2'
     compile 'com.opentok.android:opentok-android-sdk:2.10.+'
     //compile group: 'javax.mail', name: 'mail', version: '1.4'
+    compile files('libs/activation.jar')
+    compile files('libs/additionnal.jar')
+    compile files('libs/mail.jar')
 }
