@@ -22,8 +22,9 @@ public class OTPVerificationActivity extends AppCompatActivity {
         EditText editText = (EditText) findViewById(R.id.enter_otp);
         String receivedOTP = editText.getText().toString();
 
-        if(receivedOTP == correctOTP) {
+        if(receivedOTP.equals(correctOTP)) {
 
+            Toast.makeText(getApplicationContext(), "Authentication Successful", Toast.LENGTH_SHORT).show();
             Intent intent = new Intent(this,StreamingActivity.class);
             startActivity(intent);
         }
