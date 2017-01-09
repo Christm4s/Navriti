@@ -4,9 +4,12 @@ import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
+import android.media.MediaRecorder;
+
 
 import android.content.res.Resources;
 
+import android.view.View;
 import android.widget.LinearLayout;
 import android.util.Log;
 import android.widget.Toast;
@@ -18,6 +21,8 @@ import com.opentok.android.Stream;
 import com.opentok.android.Subscriber;
 import com.opentok.android.SubscriberKit;
 import com.opentok.android.OpentokError;
+
+import java.io.IOException;
 
 
 public class StreamingActivity extends AppCompatActivity implements Session.SessionListener,
@@ -163,4 +168,26 @@ public class StreamingActivity extends AppCompatActivity implements Session.Sess
     public void onVideoDisableWarningLifted(SubscriberKit subscriber) {
         Log.e(LOGTAG, "call to onVideoDisableWarning of the VideoListener");
     }
+
+    public void recordStream(View view) {
+
+        MediaRecorder recorder = new MediaRecorder();
+        recorder.setAudioSource(MediaRecorder.AudioSource.MIC);
+        recorder.setOutputFormat(MediaRecorder.OutputFormat.THREE_GPP);
+        recorder.setAudioEncoder(MediaRecorder.AudioEncoder.AMR_NB);
+        //recorder.setOutputFile(PATH_NAME);
+        try {
+            recorder.prepare();
+        }
+        catch(IOException e) {
+            Toast.makeText(getApplicationContext(), "IOException on prepare()", Toast.LENGTH_SHORT).show();
+        }
+        recorder.start();   // Recording is now started
+        //...
+        recorder.stop();
+        recorder.reset();   // You can reuse the object by going back to setAudioSource() step
+        recorder.release(); // Now the object cannot be reused
+    }
 }
+
+
