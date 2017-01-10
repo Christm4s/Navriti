@@ -24,6 +24,8 @@ public class EmailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_email);
 
         Intent intent = getIntent();
+//        send = (Button) findViewById(R.id.buttonPanel);
+//        send.setOnClickListener(new View());
     }
 
     public void publishStream(View view){
@@ -38,23 +40,23 @@ public class EmailActivity extends AppCompatActivity {
     public void sendEmail(View view) {
 
 
-        EditText editText = (EditText) findViewById(R.id.enter_email);
-        String to = editText.getText().toString();
-        String subject = "Streaming Code";
-        String body = "Thank you for using Navriti app. Your secure code to join my stream is 428695. You can download the app via https://drive.google.com/open?id=0B5C6c1293LKSWE9OdXlMZFNlUm8.";
+//        EditText editText = (EditText) findViewById(R.id.enter_email);
+//        String to = editText.getText().toString();
+//        String subject = "Streaming Code";
+//        String body = "Thank you for using Navriti app. Your secure code to join my stream is 428695. You can download the app via https://drive.google.com/open?id=0B5C6c1293LKSWE9OdXlMZFNlUm8.";
+//
+//        Intent email = new Intent(Intent.ACTION_SEND);
+//        email.setData(Uri.parse("mailto:"));
+//        email.putExtra(Intent.EXTRA_EMAIL, new String[]{ to});
+//        email.putExtra(Intent.EXTRA_SUBJECT, subject);
+//        email.putExtra(Intent.EXTRA_TEXT, body);
+//        email.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+//
+//        email.setType("message/rfc822");
+//
+//        startActivity(Intent.createChooser(email, "Choose an Email client :"));
 
-        Intent email = new Intent(Intent.ACTION_SEND);
-        email.setData(Uri.parse("mailto:"));
-        email.putExtra(Intent.EXTRA_EMAIL, new String[]{ to});
-        email.putExtra(Intent.EXTRA_SUBJECT, subject);
-        email.putExtra(Intent.EXTRA_TEXT, body);
-        email.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-
-        email.setType("message/rfc822");
-
-        startActivity(Intent.createChooser(email, "Choose an Email client :"));
-
-        /*try {
+        try {
             GMailSender sender = new GMailSender("username@gmail.com", "password");
             sender.sendMail("This is Subject",
                     "This is Body",
@@ -62,6 +64,6 @@ public class EmailActivity extends AppCompatActivity {
                     "user@yahoo.com");
         } catch (Exception e) {
             Log.e("SendMail", e.getMessage(), e);
-        }*/
+        }
     }
 }

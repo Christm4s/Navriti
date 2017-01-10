@@ -12,7 +12,7 @@
         android:layout_height="wrap_content"
         android:hint="@string/edit_message" />
 
-    <Button
+    <Button android:id="@+id/buttonPanel"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_sendEmail"
