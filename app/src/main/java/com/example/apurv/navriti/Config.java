@@ -5,4 +5,6 @@ package com.example.apurv.navriti;
  */
 
 public class Config {
+    public static final String EMAIL ="apurv.navriti@gmail.com";
+    public static final String PASSWORD ="Navriti123!";
 }

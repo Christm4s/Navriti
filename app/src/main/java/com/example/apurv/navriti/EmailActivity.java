@@ -12,16 +12,33 @@ import android.util.Log;
 import java.util.Arrays;
 import java.util.List;
 
-public class EmailActivity extends AppCompatActivity {
+import java.util.Properties;
+
+import javax.mail.PasswordAuthentication;
+import javax.mail.Session;
+
+public class EmailActivity extends AppCompatActivity implements View.OnClickListener {
 
     public final static String EXTRA_MESSAGE = "com.example.apurv.navriti.MESSAGE";
 
-    Button send;
+    //Declaring EditText
+    private EditText editTextEmail;
+    private EditText editTextSubject;
+    private EditText editTextMessage;
+
+    //Send button
+    private Button buttonSend;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_email);
+
+        editTextEmail = (EditText) findViewById(R.id.enter_email);
+
+        buttonSend = (Button) findViewById(R.id.buttonPanel);
+
+        buttonSend.setOnClickListener(this);
 
         Intent intent = getIntent();
 //        send = (Button) findViewById(R.id.buttonPanel);
@@ -37,9 +54,11 @@ public class EmailActivity extends AppCompatActivity {
         startActivity(intent);
     }
 
-    public void sendEmail(View view) {
+    public void sendEmail() {
 
-
+//        Given below is the code to send email via an email client.
+//        **************************************************************
+//
 //        EditText editText = (EditText) findViewById(R.id.enter_email);
 //        String to = editText.getText().toString();
 //        String subject = "Streaming Code";
@@ -55,15 +74,27 @@ public class EmailActivity extends AppCompatActivity {
 //        email.setType("message/rfc822");
 //
 //        startActivity(Intent.createChooser(email, "Choose an Email client :"));
+//
+//        **************************************************************
 
-        try {
-            GMailSender sender = new GMailSender("username@gmail.com", "password");
-            sender.sendMail("This is Subject",
-                    "This is Body",
-                    "user@gmail.com",
-                    "user@yahoo.com");
-        } catch (Exception e) {
-            Log.e("SendMail", e.getMessage(), e);
-        }
+
+        String email = editTextEmail.getText().toString().trim();
+        String subject = "Hello from Navriti";
+        String message = "Thank you for using Navriti app.Your passcode to join the stream is:" +
+                "\n\n" +
+                "*428695*" +
+                "\n\n" +
+                "Cheers!!";
+
+        //Creating SendMail object
+        SendMail sm = new SendMail(this, email, subject, message);
+
+        //Executing sendmail to send email
+        sm.execute();
+    }
+
+    @Override
+    public void onClick(View v) {
+        sendEmail();
     }
 }
