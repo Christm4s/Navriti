@@ -23,8 +23,6 @@ public class EmailActivity extends AppCompatActivity implements View.OnClickList
 
     //Declaring EditText
     private EditText editTextEmail;
-    private EditText editTextSubject;
-    private EditText editTextMessage;
 
     //Send button
     private Button buttonSend;
