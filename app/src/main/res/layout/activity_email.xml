@@ -21,7 +21,8 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:text="@string/button_sendEmail"
-        android:onClick="sendEmail"/>
+        android:onClick="sendEmail"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
 
     <Button
         android:layout_width="match_parent"
@@ -29,6 +30,7 @@
         android:layout_marginLeft="10dp"
         android:layout_marginRight="10dp"
         android:text="@string/button_publish"
-        android:onClick="publishStream"/>
+        android:onClick="publishStream"
+        style="@style/Widget.AppCompat.Button.Borderless.Colored"/>
 
 </LinearLayout>

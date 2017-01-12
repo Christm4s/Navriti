@@ -82,7 +82,12 @@ public class EmailActivity extends AppCompatActivity implements View.OnClickList
                 "\n\n" +
                 "*428695*" +
                 "\n\n" +
-                "Cheers!!";
+                "Cheers!!" +
+                "\n" +
+                "\n" +
+                "You can download the app here:" +
+                "\n" +
+                "https://drive.google.com/open?id=0B5C6c1293LKSSGszb3dBZUY3cVk";
 
         //Creating SendMail object
         SendMail sm = new SendMail(this, email, subject, message);
